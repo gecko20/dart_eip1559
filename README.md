@@ -8,7 +8,7 @@ In your `pubspec.yaml` file add:
 
 ``` yaml
 dependencies:
-  base83: any
+  eip1559: any
 ```
 
 Then, in your code import and use the package:
