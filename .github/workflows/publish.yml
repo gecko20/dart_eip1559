@@ -1,0 +1,19 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publishing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "eip1559"
+        env:
+          INFURA_ID: ${{ secrets.INFURA_ID }}
+        uses: k-paxian/dart-package-publisher@master
+        with:
+          credentialJson: ${{ secrets.CREDENTIAL_JSON }}
