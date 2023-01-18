@@ -1,12 +1,15 @@
 part of eip1559;
 
+/// EIP-1559 fees.
 class Fee {
+  /// The constructor.
   const Fee({
     required this.maxPriorityFeePerGas,
     required this.maxFeePerGas,
     required this.estimatedGas,
   });
 
+  /// Creates a [Fee] from JSON data.
   factory Fee.fromJson(Map<String, dynamic> json) {
     final maxPriorityFeePerGas = json['maxPriorityFeePerGas'];
     final maxFeePerGas = json['maxFeePerGas'];
@@ -31,6 +34,7 @@ class Fee {
     );
   }
 
+  /// Converts the [Fee] object to JSON map.
   Map<String, dynamic> toJson() => {
         'maxPriorityFeePerGas': maxPriorityFeePerGas.toString(),
         'maxFeePerGas': maxFeePerGas.toString(),
@@ -42,7 +46,12 @@ class Fee {
     return jsonEncode(toJson());
   }
 
+  /// Max priority fee per gas.
   final BigInt maxPriorityFeePerGas;
+
+  /// Max fee per gas.
   final BigInt maxFeePerGas;
+
+  /// Estimated gas.
   final BigInt estimatedGas;
 }

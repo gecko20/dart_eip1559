@@ -1,3 +1,4 @@
+/// EIP-1559 Ethereum and Web3 market fee and gas estimation for Dart.
 library eip1559;
 
 import 'dart:convert';
@@ -34,6 +35,7 @@ Future<Map<String, dynamic>> _call(
   return data;
 }
 
+/// Gets a block from the Web3 endpoint.
 Future<Block> getBlockByNumber(
   String url,
   String blockNumber, {
@@ -78,7 +80,7 @@ Future<FeeHistory> getFeeHistory(
       .toList();
   final reward = history['reward'] != null
       ? List.from(history['reward'])
-          .map((e) => List<String>.from(e))
+          .map((dynamic e) => List<String>.from(e))
           .map(
             (e) => e
                 .map(
@@ -100,6 +102,7 @@ Future<FeeHistory> getFeeHistory(
   );
 }
 
+/// Calculates gas and market fees according to EIP-1559.
 Future<List<Fee>> getGasInEIP1559(
   String url, {
   List<double> rewardPercentiles = const [25, 50, 75],
