@@ -1,6 +1,6 @@
 [![pub package](https://img.shields.io/pub/v/eip1559.svg)](https://pub.dartlang.org/packages/eip1559)
 
-EIP-1559 Ethereum and Web3 market fee and gas estimation.
+EIP-1559 Ethereum and Web3 market fee and gas estimation for Dart.
 
 ## Getting Started
 

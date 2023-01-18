@@ -1,5 +1,5 @@
 name: eip1559
-description: EIP-1559 Ethereum and Web3 market fee and gas estimation.
+description: EIP-1559 Ethereum and Web3 market fee and gas estimation for Dart.
 version: 0.6.0
 repository: https://github.com/xclud/dart_eip1559
 homepage: https://pwa.ir
